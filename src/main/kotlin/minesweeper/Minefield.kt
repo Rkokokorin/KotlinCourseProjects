@@ -23,13 +23,13 @@ object  Minefield {
                 //println("$randomRowInd $randomColumnInd")
                 playground[randomRowInd][randomColumnInd].contain = 'X'
                 val fromRowInd = if (randomRowInd - 1 >= 0) randomRowInd - 1
-                else randomRowInd
+                    else 0
                 val toRowInd = if (randomRowInd  + 1 < SIZE) randomRowInd + 1
-                else randomRowInd
+                    else randomRowInd
                 val fromColumnInd = if (randomColumnInd - 1 >= 0) randomColumnInd - 1
-                else randomColumnInd
+                    else 0
                 val toColumnInd =  if (randomColumnInd  + 1 < SIZE) randomColumnInd + 1
-                else randomColumnInd
+                    else randomColumnInd
                 for (b in fromRowInd .. toRowInd){
                     for (c in fromColumnInd .. toColumnInd) {
                         if (playground[b][c].contain == '/') {

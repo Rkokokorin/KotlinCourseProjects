@@ -1,6 +1,5 @@
 package minesweeper
 
-import kotlin.math.pow
 import kotlin.system.exitProcess
 
 
@@ -20,11 +19,7 @@ fun gameProcess() {
     val mineCom = "mine"
     var x: Int
     var y: Int
-//        if (Minefield.playground[y][x].contain.isDigit()) {
-//            println("There is a number here!")
-//            continue;
-//            }
-//        else
+
     while (true) {
         try {
             print("Set/delete mines marks (x and y coordinates):")
@@ -54,7 +49,6 @@ fun gameProcess() {
         }
     }
 }
-//Закончил на том что добавил счетчик открытых мин
 fun proceedFreeCommand(x: Int, y: Int) {
     if (Minefield.firstMove) {
         val savedMarks = MutableList(0){-1}
@@ -62,7 +56,7 @@ fun proceedFreeCommand(x: Int, y: Int) {
             for (y1 in 0.. 8)
                 for (x1 in 0..8)
                     if (Minefield.playground[y1][x1].isMarked) {
-                        savedMarks.add(savedMarks.size, y1);
+                        savedMarks.add(savedMarks.size, y1)
                         savedMarks.add(savedMarks.size, x1)
                     }
             Minefield.createMinefield(Minefield.mines)
@@ -86,7 +80,7 @@ fun proceedMarkCommand(x: Int, y: Int) {
     Minefield.playground[y][x].invertMark()
 }
 fun wrongInput() {
-    println("Такой команды нет")
+    println("Command input Error")
 }
 fun openCell(x: Int, y: Int) {
     val openedBefore = Minefield.playground[y][x].isOpened
